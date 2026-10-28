@@ -4,7 +4,7 @@
 
 - **Registration Number:** `202401100100164`
 - **Name:** `Nikhil Dubey`
-- **Port:** `8071`
+- **Port:** `8064`
 - **Docker Hub Username:** `nikhildevs`
 - **Docker Hub Image:** `nikhildevs/fest-backend`
 - **Repository:** `202401100100164-docker-assessment`
@@ -36,11 +36,11 @@ The services are separated using Docker networks so the frontend cannot directly
 | Setting | Value |
 |---|---|
 | Registration number | `202401100100164` |
-| Application port | `8071` |
+| Application port | `8064` |
 | Backend container port | `5000` |
 | Database name | `festpass` |
 | Database user | `festpass` |
-| Frontend URL | `http://localhost:8071` |
+| Frontend URL | `http://localhost:8064` |
 | Health endpoint | `/api/health` |
 | Registrations endpoint | `/api/registrations` |
 
@@ -63,10 +63,10 @@ docker compose ps
 Check backend health:
 
 ```bash
-curl http://localhost:8071/api/health
+curl http://localhost:8064/api/health
 ```
 
-Open the frontend at `http://localhost:8071`.
+Open the frontend at `http://localhost:8064`.
 
 Stop the application:
 
@@ -78,7 +78,7 @@ The PostgreSQL named volume is retained when running `docker compose down` witho
 
 ## Docker Image Hardening
 
-### Original Image — `fest-backend:0.1`
+### Original Image — `fest-backend:1.0.1`
 
 The initial image used the `python:3.9` base image and the original application dependencies.
 
@@ -140,7 +140,7 @@ Both tags were pushed successfully and returned the same digest.
 
 ## Cosign Image Signing and Verification
 
-### Signed release — `1.0.0`
+### Signed release — `1.0.1`
 
 The Docker image `nikhildevs/fest-backend:1.0.1` was signed using Cosign with a password-protected private key. The signature was created and verified against the image digest.
 
