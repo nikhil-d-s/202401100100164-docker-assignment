@@ -86,22 +86,6 @@ The initial image was scanned using Trivy, and the results were saved to:
 
 `reports/trivy-before.txt`
 
-### Hardened Image — `fest-backend:0.2`
-
-The hardened image uses a versioned slim Python base image and includes the following changes:
-
-- Upgraded Python packaging tools.
-- Dependency compatibility validation using `pip check`.
-- A dedicated non-root user named `appuser`.
-- Python environment settings to prevent bytecode generation and enable unbuffered logs.
-- Dependency-first copying to improve Docker build caching.
-
-The hardened image was built using:
-
-```bash
-docker build -t fest-backend:0.2 ./backend
-```
-
 The container's runtime identity was checked using:
 
 ```bash
@@ -158,7 +142,7 @@ Both tags were pushed successfully and returned the same digest.
 
 ### Signed release — `1.0.0`
 
-The Docker image `nikhildevs/fest-backend:1.0.0` was signed using Cosign with a password-protected private key. The signature was created and verified against the image digest.
+The Docker image `nikhildevs/fest-backend:1.0.1` was signed using Cosign with a password-protected private key. The signature was created and verified against the image digest.
 
 - **Image digest:** `sha256:15358b6b63a01b174ceb0efc56d2563dc4f7391b7867c52970f72fcafee73104`
 - **Verification key:** `cosign.pub`
